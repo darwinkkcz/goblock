@@ -36,3 +36,7 @@ func (block *Block) SetHash() {
 	hash := sha256.Sum256(blockBytes)
 	block.Hash = hash[:]
 }
+
+func CreateGenesisBlock(data []byte) *Block {
+	return NewBlock(1, nil, data)
+}
